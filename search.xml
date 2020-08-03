@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[「CSP-S 数学」排列与组合.md]]></title>
+    <url>%2F2019%2F09%2F18%2F%E3%80%8CCSP-S-%E6%95%B0%E5%AD%A6%E3%80%8D%E6%8E%92%E5%88%97%E4%B8%8E%E7%BB%84%E5%90%88-md%2F</url>
+    <content type="text"><![CDATA[MathJax.Hub.Config({ tex2jax: { skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'], inlineMath: [['$','$']] } }); 计数原理、排列、组合、递推关系、等差数列求和公式、自然数平方和公式、二项式定理。 计数原理加法原理做一件事有$n$种途径，每种途径有$p_i$个不同的方案，则做这件事的方案数为$$\sum_{i=1}^n p_i$$ 乘法原理做一件事有 个步骤，每个步骤有 个不同的方案，则做这件事的方案数为 容斥原理统计多个集合的并的元素数量：先加上所有集合的元素的元素数量，再减去『多加的』每两个集合相交的元素数量，再加上『多减的』每三个集合相交的元素数量 …… 即等式左边是多个集合的并的元素数量，等式右边每一项是几个几何的交的元素数量，每一项的符号取决于元素数量的奇偶。 排列全排列把 个元素按照不同顺序排列，设总方案数为 （定义 ），考虑第一个元素摆放的位置，得出公式 即 。 普通排列从 个元素中取 个，按照不同顺序排列，设总方案数为 ，每次选一个数，第一次有 种选择，第二次有 种选择，直到第 次有 种选择，即 将上式与 对比，缺少 及之后的项，即 有重复元素的全排列从 种元素，第 种有 个，设 ，为了保证答案不重复，可以先求出 ，再除去每种元素重复的情况，即 组合组合数从 n 个元素中选择 k 个，顺序无关，设总方案数为 。把排列数 看做先从 n 各种选择 k 个元素，再对 k 个元素做全排列，即 移项得 组合数的性质 全选或全不选只有一种方案。 选择 个拿走相当于选择 个留下。 考虑最后一个选还是不选（Pascal 公式，常用来递推计算组合数表）。 可重复选择的组合从 n 种无限多的元素中选择 k 个，共有 种方案。 组合数的计算组合数表用 Pascal 公式递推，组合数太大要开高精度或者取模。 BigInt combo[MAXN + 1][MAXN + 1]; inline void makeComboTable() { for (int i = 1; i &lt;= MAXN; i++) { combo[i][0] = combo[i][i] = 1; for (int j = 1; j &lt; i; j++){ combo[i][j] = combo[i - 1][j] + combo[i - 1][j - 1]; } }} inline BigInt &amp;C(int n, int k) { return combo[n][k];}单个计算书上有用 double 来算的，因为中间乘法 long long 可能会溢出，不知道那样会不会损失精度。 long long C(long long n, long long k) { long long result = 1; for (int i = 1; i &lt;= k; i++) { result = result * (n - i + 1) / i; } return result;}递推关系Fibonacci 数列楼梯上共有 个台阶，一次可以走一个或两个，总方案数为 边界为 Catalan 数给定一个凸 边形，用 条不相交的直线将它剖分成 个三角形，设方案总数为 。 对每个顶点编号，第 个顶点编号为 。作三角形 （），该三角形左边是一个 边形，右边是一个 边形，即 公式等差数列设数列 对于任意的 满足 ，则有 求和公式为 自然数平方和 不会证。 二项式定理]]></content>
+      <categories>
+        <category>编程</category>
+        <category>数学知识</category>
+      </categories>
+      <tags>
+        <tag>CSP-S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「随想」Welcome, 2019]]></title>
+    <url>%2F2019%2F03%2F30%2F%E3%80%8C%E9%9A%8F%E6%83%B3%E3%80%8DWelcome-2019%2F</url>
+    <content type="text"><![CDATA[2019转眼三个月就过去了，有点时光飞逝而过的感觉，在工作学习生活上有一些感想，记录一下20190519。2020已经过了大半，这一年发生了许多事情，新冠疫情，水灾，中美对抗，中国挺过来了，这一切终将过去，在历史上划上浓重的一笔！！！]]></content>
+      <categories>
+        <category>个人</category>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>随想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「网站收集」我的收藏]]></title>
+    <url>%2F2019%2F01%2F01%2F%E3%80%8C%E7%BD%91%E7%AB%99%E6%94%B6%E9%9B%86%E3%80%8D%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%2F</url>
+    <content type="text"><![CDATA[我的收藏个人博客搭建网页－Hexo-官方参考文档 网页－Hexo-主题优化 Hexo的Next主题详细配置 网页－Hexo-主题iissnan 知乎－Hexo－搭建blog 知乎－Hexo－换了电脑怎么更新博客 Hexo文章置顶的方法 hexo超完整的搭建教程 Markdown相关github flavored markdownMathJax 语法参考Markdown编辑－Moeditor MathJax使用LaTeX语法编写数学公式教程 知乎收藏win10相关你知道哪些关于 Windows 10 的骚操作？ 电脑win10系统，各类型软件推荐？只要最好？]]></content>
+      <categories>
+        <category>个人</category>
+        <category>常用站点</category>
+      </categories>
+      <tags>
+        <tag>常用网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[「Leetcode-0191」hammingWeight 汉明码]]></title>
+    <url>%2F2018%2F12%2F25%2F%E3%80%8CLeetcode-0191%E3%80%8DhammingWeight-%E6%B1%89%E6%98%8E%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[题目编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。 示例 1：输入：00000000000000000000000000001011输出：3解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 ‘1’。 示例 2：输入：00000000000000000000000010000000输出：1解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 ‘1’． 示例 3：输入：11111111111111111111111111111101输出：31解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 ‘1’。 提示：请注意，在某些语言（如 Java）中，没有无符号整数类型。在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。在 Java 中，编译器使用二进制补码记法来表示有符号整数。因此，在上面的 示例 3 中，输入表示有符号整数 -3。 链接Leetcode-0191 题解123456789101112131415161718192021222324252627#include &lt;cstdio&gt;typedef unsigned int uint32_t;class Solution&#123;public: int hammingWeight(uint32_t n) &#123; int count = 0; while (n) &#123; n = n &amp; (n - 1); count++; &#125; return count; &#125;&#125;;int main()&#123; Solution a; uint32_t n; scanf("%d", &amp;n); printf("%d", a.hammingWeight(n)); return 0;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+        <category>C++</category>
+        <category>位运算</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[benny]]></title>
+    <url>%2F2018%2F12%2F23%2Fbenny%2F</url>
+    <content type="text"><![CDATA[MathJax.Hub.Config({ tex2jax: { skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'], inlineMath: [['$','$']] } }); Markdown 基本语法1.1 标题Markdown中包含了6级的标题，每级标题的字号是不一样的，由1-6递减，分别为#，##，…,######. 一二级标题自带分格线 1.1.1 二级标题1.2 段落与分隔线1.2.1 段落在Markdown中写作一个段落的方法很简单，我们使用一个空行来表示就好了 1.2.2 分隔线 1.3 粗体及斜体**文字** 显示为粗体 *文字* 显示为斜体 今天是个不一样的_日子_ 1.4 引用代码程序员在blog中添加代码是最经常不过的了，可以通过如下的方式添加一段代码，也可以指定代码的种类。使用首尾各三个```。在开头的三个```后可以添加语言名称 1.5 添加图片和链接 添加链接，使用两个中括号来表示，前一个中括号为链接说明，后一个中括号为链接地址。格式如下：[]() 计蒜客 30999 添加图片，在添加链接的的前一个中括号前添加一个!(当然是半角的)号。格式：！[]() c d 1.6 有序列表和无序列表有序列表 数字.空格无序列表 * 空格 工作 学习 生活 工作 学习 生活 1.7 任务列表购物清单 一次性水杯 西瓜 豆浆 可口可乐 小茗同学 Markdown 高级语法2.1 表格 Header1 Header2 Header3 item 1 1. one2. two3. three 50 item 2 4. four5. five6. six 60 2.2 流程图Github上的语法说明：Markdown流程图说明 1st=&gt;start: Start &emsp;&emsp;春天来了，又到了万物复苏的季节。 12345#include &lt;cstdio&gt;int main()&#123; return 0;&#125; 这是一个示例图片。 图片显示在 N 段文字的右边。 N 与图片高度有关。 刷屏行。 刷屏行。 到这里应该不会受影响了，本行应该延伸到了图片的正下方，所以我要足够长才能确保不同的屏幕下都看到效果。 Header1 Header2 item 1 1. one2. two3. three $9 = 3 \times 3$ bbb $ E = mc ^ 2$ $$ A=a \bullet i+b \bullet j=[i,j] \bullet [a;b]=基\bullet坐标 \tag{3}$$$$E=mc^2$$ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F03%2F30%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
